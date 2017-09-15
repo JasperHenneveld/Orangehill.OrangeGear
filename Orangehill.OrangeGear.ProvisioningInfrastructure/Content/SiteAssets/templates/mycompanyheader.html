@@ -1,0 +1,56 @@
+        <div class="row">
+            <div class="large-12">
+
+                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+                    <button class="menu-icon" type="button" data-toggle>
+                        <i class="icon-align-justify"></i><span><script>document.write(RRResourcesText.main_nav_menu);</script></span>
+                    </button>
+                </div>
+
+                <script type="text/javascript">
+                    var rrSearch = function() {
+                        window.location.href = _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/pages/results.aspx?k=" + $("#srch-term").val();
+                        return false;
+                    };
+                </script>
+                <div class="top-bar" id="main-menu">
+                    <div class="top-bar-right">
+                        <div class="search-container">
+                            <input type="search" data-rrresourcesplaceholder="search_placeholder" placeholder="" name="srch-term" id="srch-term" onkeypress="if (event.keyCode == 13) { rrSearch(); return false; }" />
+                            <a class="search" id="srch-term-button" onclick="rrSearch(); return false;">
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="top-bar-left">
+                        <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
+                            <li id="RR_menu_home">
+								<script>document.write(decodeURIComponent("%3Ca href='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/home'%3E" + RRResourcesText.main_nav_current + "%3C/a%3E"));</script>
+                            </li>
+                            <li id="RR_menu_colleagues">
+								<script>document.write(decodeURIComponent("%3Ca href='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/pages/colleagues.aspx'%3E" + RRResourcesText.main_nav_colleagues + "%3C/a%3E"));</script>
+                            </li>
+                            <li id="RR_menu_mycompany" class="current red-current">
+								<script>document.write(decodeURIComponent("%3Ca href='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/mycompany'%3E" + RRResourcesText.main_nav_mycompany + "%3C/a%3E"));</script>
+                            </li>
+                            <li id="RR_menu_holding">
+								<script>document.write(decodeURIComponent("%3Ca href='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/royalreesink'%3E" + RRResourcesText.main_nav_royalreesink + "%3C/a%3E"));</script>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mijn-bedrijf" id="logo-container">
+            <div class="small-4 medium-2 large-2 small-left medium-centered large-centered columns text-center">
+				<script>document.write(decodeURIComponent("%3Ca href='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/home'%3E%3Cimg src='" + _spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + "/siteassets/img/reesink_logo.jpg' /%3E%3C/a%3E"));</script>
+            </div>
+            <div id="active-branch">
+                <div class="row medium-up-1">
+                    <div id="rrmycompanylogo" class="columns">
+                        <div class="logo-small"></div>
+                    </div>
+                </div>
+            </div>
+        </div>

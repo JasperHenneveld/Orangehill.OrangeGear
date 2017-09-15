@@ -1,0 +1,47 @@
+/* SP Online */
+#contentBox {
+    margin-left: 20px;
+}
+#s4-titlerow {
+    display: none !important;
+}
+#s4-ribbonrow {
+    display: none;
+}
+/*
+#suiteBarTop.ms-fullWidth.removeFocusOutline {
+    display: none;
+}
+    #suiteBarTop.ms-fullWidth.removeFocusOutline.ohShow {
+        display: block;
+    }
+.ms-fullscreenmode #suiteBarTop {
+    display: none !important;
+}
+*/
+body .o365cs-nav-topItem.o365cs-nav-o365Branding.o365cs-rsp-tn-hideIfAffordanceOn { display: inline-block; }
+body.ohPublishing .o365cs-nav-topItem.o365cs-nav-o365Branding.o365cs-rsp-tn-hideIfAffordanceOn { display: none; }
+body.ohPublishing #DeltaPageStatusBar, body.ohPublishing #pageStatusBar { display: none; }
+
+#contentBox { min-width: 100px; }
+
+/* SP 2013 OnPremise */
+#suiteBar {
+    display: none;
+}
+    #suiteBar.ohShow {
+        display: table-row;
+    }
+.ms-fullscreenmode #suiteBar {
+    display: none !important;
+}
+
+/* generic */
+body #ohPublishingPanel { display: none; }
+body.ohPublishing #ohPublishingPanel { display: block; }
+
+
+body, .js-callout-body {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  }

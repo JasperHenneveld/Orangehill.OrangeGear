@@ -1,0 +1,134 @@
+<script id="event-details" type="text/kendo-x-template">
+    <div class="row #:item.company.businessname#" id="RREventDetails">
+        <div class="large-12 columns">
+            <div class="page-header">
+                <div class="#:item.company.businessname# float-right">
+                    <div class="logo-small"></div>
+                </div>
+                <h1 class="title"><a href="#:item.Path#">#:item.Title#</a></h1>
+                <span class="meta">#:item.articlestartmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')# -
+                    <a href="userprofile.aspx?user=#=item.ModifiedById.split(' | ')[0]#"><span>#=item.ModifiedById.split(' | ')[1]#</span></a>
+                #if(item.tags!==undefined && item.tags!==""){#
+                <br /><i class="icon-tags"></i>#:item.tags#
+                #}#</span>
+            </div>
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_company#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p>#:item.company.name#</p>
+                </div>
+            </div>
+            #if(item.Location!==null && item.Location!==''){#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_location#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p>#:item.Location#</p>
+                </div>
+            </div>
+            #}#
+            # if(item.fAllDayEvent==='true'){ #
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns valign">
+                    <p>#:RRResourcesText.event_date#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns event">
+                    <div class='box-header'>
+                        <div class='square-content'>
+                            <div>
+                                <span>#:item.startdate.format('dd')#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valign">
+                        <p>#:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('MMMM YYYY')#</p>
+                    </div>
+                </div>
+            </div>
+            #}else{#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns valign">
+                    <p>#:RRResourcesText.event_startdate#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns event">
+                    <div class='box-header'>
+                        <div class='square-content'>
+                            <div>
+                                <span>#:item.startdate.format('dd')#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valign">
+                        <p>#:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('MMMM YYYY, HH:mm')#</p>
+					</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns valign">
+                    <p>#:RRResourcesText.event_enddate#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns event">
+                    <div class='box-header'>
+                        <div class='square-content'>
+                            <div>
+                                <span>#:item.enddate.format('dd')#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valign">
+                        <p>#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('MMMM YYYY, HH:mm')#</p>
+                    </div>
+                </div>
+            </div>
+            #}#
+            #if(item.externalurl!==null && item.externalurl!==''){#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_website#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p>
+                        <a href="#=item.externalurl.Url#"  target="_blank">#=item.externalurl.Description#</a>
+                    </p>
+                </div>
+            </div>
+            #}#
+            #if(item.RRImageOWSURLH!==null && item.RRImageOWSURLH!==''){#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_image#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p>
+                        <img src="#=item.RRImageOWSURLH.split(', ')[0]#" />
+                    </p>
+                </div>
+            </div>
+            #}#
+            #if(item.Description!==null && item.Description!==''){#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_description#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p>#:item.Description#</p>
+                </div>
+            </div>
+            #}#
+            #if(item.RREventOrganizerOWSUSER!==null && item.RREventOrganizerOWSUSER!==''){#
+            <div class="row">
+                <div class="large-2 medium-2 small-12 info-label columns">
+                    <p>#:RRResourcesText.event_organizer#</p>
+                </div>
+                <div class="large-10 medium-10 small-12 columns">
+                    <p><a href="userprofile.aspx?user=#=item.RREventOrganizerOWSUSER.split(' | ')[0]#">#=item.RREventOrganizerOWSUSER.split(' | ')[1]#</a></p>
+                </div>
+            </div>
+            #}#
+
+        </div>
+    </div>
+</script>

@@ -1,0 +1,108 @@
+    <script id="user-profile" type="text/kendo-x-template">
+        <div class="row #:item.company.businessname#" b-margin">
+            <div class="large-12 columns">
+                <div class="page-header">
+                    <h1>#:item.PreferredName#</h1>
+                    <div class="row">
+                        <div class="large-10 medium-10 small-12 columns">
+                            <ul class="adres">
+                                <li class="phone">
+                                    <span>#:item.WorkPhone#</span>
+                                </li>
+                                #if(item.Fax!==""){#
+                                <li class="fax">#:item.Fax#</li>
+                                #}#
+								<li class="mobile">
+									<span>#:item.CellPhone#</span>
+								</li>
+                                <li class="email">
+                                    <a href="mailto:#:item.WorkEmail#">#:item.WorkEmail#</a>
+                                </li>
+								<!--
+                                <li class="web">
+                                    <a href="#=item.WebSite||item.delveurl#" target="_blank">#=item.WebSite||item.PreferredName#</a>
+                                </li>
+								-->
+                            </ul>
+                            <!--
+                            #:RRResourcesText.user_profile_phone_short#
+                            #:RRResourcesText.user_profile_fax_short#
+                            #:RRResourcesText.user_profile_email_short#
+                            -->
+                        </div>
+                        <div class="large-2 medium-2 small-12 columns">
+                            <div class="logo-large logo-medium"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 medium-12 small-12 columns">
+                        <div class="profile-pic large">
+                            <img src="https://outlook.office365.com/owa/service.svc/s/GetPersonaPhoto?size=HR120x120&email=#:item.WorkEmail#" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-2 medium-2 small-4 columns">
+                        <p>#:RRResourcesText.user_profile_company#</p>
+                    </div>
+                    <div class="large-10 medium-10 small-8 columns">
+                        <p>#:item.company.name#</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-2 medium-2 small-4 columns">
+                        <p>#:RRResourcesText.user_profile_location#</p>
+                    </div>
+                    <div class="large-10 medium-10 small-8 columns">#:item['SPS-Location']#</div>
+                </div>
+                <div class="row">
+                    <div class="large-2 medium-2 small-4 columns">
+                        <p>#:RRResourcesText.user_profile_jobtitle#</p>
+                    </div>
+                    <div class="large-10 medium-10 small-8 columns">
+                        <p>#:item['SPS-JobTitle']#</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-2 medium-2 small-4 columns">
+                        <p>#:RRResourcesText.user_profile_department#</p>
+                    </div>
+                    <div class="large-10 medium-10 small-8 columns">
+                        <p>#:item['SPS-Department']#</p>
+                    </div>
+                </div>
+                #if(item['SPS-WorkDays']!==undefined){#
+                <div class="row b-margin">
+                    <div class="large-2 medium-2 small-4 columns">
+                        <p>#:RRResourcesText.user_profile_workdays#</p>
+                    </div>
+                    <div class="large-10 medium-10 small-8 columns">
+                        <p>#:item.workdays#</p>
+                    </div>
+                </div>
+                #}#
+                <div class="row">
+                    <div class="large-12 columns">
+                        <h3>#:RRResourcesText.user_profile_expertise#</h3>
+                        <p>
+                        #=item.RRExpertise.split('|').join(', ')#
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <h3>#:RRResourcesText.user_profile_aboutme#</h3>
+                        #=item.AboutMe#
+                    </div>
+                </div>
+				<!--
+                <div class="row">
+                    <div class="large-12 columns">
+                        <a href="#:item.delveurl#">#:RRResourcesText.user_profile_discover#</a>
+                    </div>
+                </div>
+				-->
+            </div>
+        </div>
+    </script>

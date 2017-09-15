@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:Preferences  Generator="OfficeDevPnP.Core, Version=2.8.1610.0, Culture=neutral, PublicKeyToken=3751622786b357c2" >
+    <pnp:Parameters>
+      <pnp:Parameter Key="ContentTypeGroup">Orangehill OrangeGear Content Types</pnp:Parameter>
+      <pnp:Parameter Key="Hidden">False</pnp:Parameter>
+    </pnp:Parameters>
+  </pnp:Preferences>
+  <pnp:Templates ID="OrangeHill">
+    <pnp:ProvisioningTemplate ID="AddProvisioningTemplates" Version="1">
+      <pnp:SiteFields>
+        <Field Type="Note" DisplayName="Description" NumLines="6" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Group="PnP Partner Pack Site Columns" ID="{ff4b34d5-458e-47ca-835f-e176204e8b53}" SourceID="{fcf55973-61e5-4a6e-a0a4-92bb172043a0}" StaticName="PnPProvisioningTemplateDescription" Name="PnPProvisioningTemplateDescription"></Field>
+        <Field Type="Choice" DisplayName="Template Scope" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="PnP Partner Pack Site Columns" ID="{2f4f410c-b2c9-4e0b-80e7-e5550492752a}" SourceID="{fcf55973-61e5-4a6e-a0a4-92bb172043a0}" StaticName="PnPProvisioningTemplateScope" Name="PnPProvisioningTemplateScope">
+          <Default>Site</Default>
+          <CHOICES>
+            <CHOICE>Site</CHOICE>
+            <CHOICE>Web</CHOICE>
+            <CHOICE>Partial</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field Type="URL" DisplayName="Template Source Url" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Hyperlink" Group="PnP Partner Pack Site Columns" ID="{6049f7db-d1e7-42a0-8f3a-787ca2531fbb}" SourceID="{fcf55973-61e5-4a6e-a0a4-92bb172043a0}" StaticName="PnPProvisioningTemplateSourceUrl" Name="PnPProvisioningTemplateSourceUrl"></Field>
+        <Field Type="MultiChoice" DisplayName="Template Platform" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" FillInChoice="FALSE" Group="PnP Partner Pack Site Columns" ID="{25e686b6-c9b9-4aa7-b0d4-855cee22a47e}" SourceID="{fcf55973-61e5-4a6e-a0a4-92bb172043a0}" StaticName="PnPProvisioningTemplatePlatform" Name="PnPProvisioningTemplatePlatform">
+          <Default>SharePoint Online</Default>
+          <CHOICES>
+            <CHOICE>SharePoint Online</CHOICE>
+            <CHOICE>SharePoint 2016</CHOICE>
+            <CHOICE>SharePoint 2013</CHOICE>
+          </CHOICES>
+        </Field>
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x010100498154DED7C84F4AB61A4029018F9048" Name="OHProvisioningTemplate" Description="" Group="{parameter:ContentTypeGroup}" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="5f47e085-2150-41dc-b661-442f3027f552" Name="SelectFilename" />
+            <pnp:FieldRef ID="8553196d-ec8d-4564-9861-3dbe931050c8" Name="FileLeafRef" Required="true" />
+            <pnp:FieldRef ID="8c06beca-0777-48f7-91c7-6da68bc07b69" Name="Created" Hidden="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" />
+            <pnp:FieldRef ID="ff4b34d5-458e-47ca-835f-e176204e8b53" Name="PnPProvisioningTemplateDescription" />
+            <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
+            <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
+            <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
+            <pnp:FieldRef ID="2f4f410c-b2c9-4e0b-80e7-e5550492752a" Name="PnPProvisioningTemplateScope" />
+            <pnp:FieldRef ID="25e686b6-c9b9-4aa7-b0d4-855cee22a47e" Name="PnPProvisioningTemplatePlatform" />
+            <pnp:FieldRef ID="6049f7db-d1e7-42a0-8f3a-787ca2531fbb" Name="PnPProvisioningTemplateSourceUrl" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+        <pnp:ContentType ID="0x0101002B01D2E6AC3F40B091AC5FF2506FB3AD" Name="OHOrangeGearTask" Description="" Hidden="false" Group="{parameter:ContentTypeGroup}" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="8c06beca-0777-48f7-91c7-6da68bc07b69" Name="Created" Hidden="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" />
+            <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
+            <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
+            <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+        <pnp:ContentType ID="0x0101000319B310A9EF455CBC663F44A56C659E" Name="OHOrangeGearDeploymentSet" Description="" Hidden="false" Group="{parameter:ContentTypeGroup}" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="8c06beca-0777-48f7-91c7-6da68bc07b69" Name="Created" Hidden="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" />
+            <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
+            <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
+            <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="PnPProvisioningTemplates" Description="" DocumentTemplate="{site}/PnPProvisioningTemplates/Forms/template.dotx" TemplateType="101" Url="PnPProvisioningTemplates" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" ContentTypesEnabled="true" Hidden="true" EnableAttachments="false" OnQuickLaunch="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{F7A4860F-DF43-4820-8714-877D38C1D1D6}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/PnPProvisioningTemplates/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=40">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="PnPProvisioningTemplateScope" />
+                <FieldRef Name="PnPProvisioningTemplatePlatform" />
+                <FieldRef Name="PnPProvisioningTemplateSourceUrl" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="2f4f410c-b2c9-4e0b-80e7-e5550492752a" Name="PnPProvisioningTemplateScope" DisplayName="Template Scope" />
+            <pnp:FieldRef ID="25e686b6-c9b9-4aa7-b0d4-855cee22a47e" Name="PnPProvisioningTemplatePlatform" DisplayName="Template Platform" />
+            <pnp:FieldRef ID="6049f7db-d1e7-42a0-8f3a-787ca2531fbb" Name="PnPProvisioningTemplateSourceUrl" DisplayName="Template  Source Url" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+      <pnp:CustomActions>
+        <pnp:SiteCustomActions>
+          <pnp:CustomAction Location="Microsoft.SharePoint.SiteSettings" Name="Provisioning Templates" Group="SiteCollectionAdmin" Title="Provisioning Templates" Url="~site/PnPProvisioningTemplates" Description="" >
+           
+          </pnp:CustomAction>
+
+        </pnp:SiteCustomActions>
+      </pnp:CustomActions>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

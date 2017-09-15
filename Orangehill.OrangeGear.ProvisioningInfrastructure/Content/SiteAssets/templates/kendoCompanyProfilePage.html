@@ -1,0 +1,173 @@
+    <script id="modal-reveal-template1" type="text/kendo-x-template">
+        <div class="large reveal reesinkbodycontainer" id="currentModal#:item.DocId#" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <div class="extra-container">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <button type="button" class="float-right close" data-close="currentModal#:item.DocId#"><i class="icon-remove"></i></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns #:item.company.businessname#">
+                        <div class="page-header">
+                            <div class="float-right #:item.company.businessname#">
+                                <div class="logo-small"></div>
+                            </div>
+                            <h1 class="title"><a href="#:item.Path#">#:item.Title#</a></h1>
+                            <span class="meta">
+                                #:item.ArticleStartDateOWSDATE!==null ? item.articlestartmoment.format('D MMMM YYYY') : item.articlestartmoment00.format('D MMMM YYYY')# -
+                                # $.each(item.RRAuthor, function(n,author){ #
+                                <a href="javascript:;" onclick="RRDataModule.findUser('#:author.email#');">#:author.name#</a>&nbsp;&nbsp;&nbsp;
+                                # }); #
+                            </span>
+                            # if(item.tags!==null && item.tags!==''){ #
+                            <span class="meta"><i class="icon-tags"></i>#:item.tags#</span>
+                            # } #
+                        </div>
+                        # if (item.PublishingImage!==null){ #
+                        <p>
+                            <img src="#:item.PublishingImage#" title="#:item.Title#" alt="" />
+                        </p>
+                        # } #
+                        # if(item.ArticleByLineOWSTEXT!==null && item.ArticleByLineOWSTEXT!==''){#
+                        <p class="text">#:item.ArticleByLineOWSTEXT#</p>
+                        # } #
+                        #=item.PublishingPageContentOWSHTML#
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="current-template" type="text/kendo-x-template">
+        <div class="small-12 medium-4 large-4 columns item #:item.company.businessname#" id="currentItem#:item.DocId#">
+            <div class="box news" data-equalizer-watch>
+                # if (item.PublishingImage===null){ #
+                <div class="box-header empty"></div>
+                # } else { #
+                <div class="box-header">
+                    <img src="#:item.PublishingImage#?renditionid=6" title="#:item.Title#" alt="" />
+                </div>
+                # } #
+                <div class="box-content">
+                    <h3><a href="javascript:;" onclick="return RRDataModule.revealItemAsync(this);" data-docid="#:item.DocId#" data-open="currentModal#:item.DocId#" data-spweburl="#:item.SPWebUrl#" data-listid="#:item.ListID#" data-listitemid="#:item.ListItemID#">#:item.Title#</a></h3>
+                    # if(item.ArticleByLineOWSTEXT!==null && item.ArticleByLineOWSTEXT!==''){#
+					<p class="text">#:item.ArticleByLineOWSTEXT#</p>
+					# } #
+                </div>
+                <div class="box-footer clearfix">
+                    # if(item.RRYammerIdOWSTEXT!==undefined && item.RRYammerIdOWSTEXT!==''){ #
+                    <ul class="social menu float-left" data-animate="slideInBottom" id="RRSocial#:item.RRYammerIdOWSTEXT#" data-RRSocial="#:item.RRYammerIdOWSTEXT#">
+                        <li><a href="javascript:;"><span></span> <i class="fi-like"></i></a></li>
+                        <li><a href="javascript:;"><span></span> <i class="fi-comments"></i></a></li>
+                    </ul>
+                    # } #
+                    <div class="logo-small"></div>
+                </div>
+                <div class="company-small">#:item.company.name#</div>
+            </div>
+        </div>
+    </script>
+    <script id="company-profile-locations" type="text/kendo-x-template">
+        # $.each(items, function(n,m) { #
+            # if(n===0){ #
+            <li class="accordion-item is-active" data-accordion-item>
+            # }else{ #
+            <li class="accordion-item" data-accordion-item>
+            # } #
+                <a href="javascript:;" class="accordion-title"><i class="icon-plus-minus"></i><span>#:m.Title# - #:m.HomeAddressCityOWSTEXT#</span></a>
+                <div class="accordion-content" data-tab-content>
+                    <div class="row">
+                        <div class="large-8 medium-8 small-12 columns">
+                            <ul class="adres">
+                                <li>#:m.HomeAddressStreetOWSTEXT#</li>
+                                <li>#:m.HomeAddressPostalCodeOWSTEXT# #:m.HomeAddressCityOWSTEXT#</li>
+                                # if(m.CompanyNumberOWSTEXT!==null && m.CompanyNumberOWSTEXT!==''){ #
+                                <li class="phone">#:m.CompanyNumberOWSTEXT#</li>
+                                # } #
+                                # if(m.WorkFaxOWSTEXT!==null && m.WorkFaxOWSTEXT!==''){ #
+                                <li class="fax">#:m.WorkFaxOWSTEXT#</li>
+                                # } #
+                                # if(m.WorkEmail!==null && m.WorkEmail!==''){ #
+                                <li class="email">
+                                    <a href="mailto:#:m.WorkEmail#">#:m.WorkEmail#</a>
+                                </li>
+                                # } #
+                                # if(m.webpage!==null && m.webpage!==''){ #
+                                <li class="web">
+                                    <a href="#:m.webpage.Url#" target="_blank">#:m.webpage.Description#</a>
+                                </li>
+                                # } #
+                                # if(m.RRGoogleMapsLinkOWSMTXT!==null && m.RRGoogleMapsLinkOWSMTXT!==''){ #
+                                <li class="map">
+                                    <a href="#:m.RRGoogleMapsLinkOWSMTXT#" target="_blank">#:RRResourcesText.companyprofile_google_maps#</a>
+                                </li>
+                                # } #
+                            </ul>
+                        </div>
+                        <div class="large-4 medium-4 small-4 columns company #:m.company.businessname#">
+                            <div class="logo-large"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        # }); #
+    </script>
+    <script id="company-profile-events" type="text/kendo-x-template">
+    # $.each(items, function(n,item) { #
+        <div class="row event">
+            <div class="large-12 columns">
+                <div class='box-header'>
+                    <div class='square-content'>
+                        <div>
+                            <span>#:item.startdate.format('dd')#</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-content">
+                    # if(item.fAllDayEvent==='true'){ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                    <br />
+                        # if(item.startdate.getDate()!==item.enddate.getDate()){ #
+						#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                        # } #
+                    <br />
+                    #:RRResourcesText.companyprofile_alldayevent#
+                    # }else{ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    <br />
+                    #:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    # } #
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="event-name">
+                    <h3><a href="#='/eventdetails?eventWorkId='+item.DocId#">#:item.Title#</a></h3>
+                    # if(item.Location!==null){ #
+                    #:item.Location#
+                    # } #
+                </div>
+            </div>
+        </div>
+    # }); #
+    </script>
+    <script id="company-tags" type="text/kendo-x-template">
+    # $.each(items, function(n,m) { #
+        <a href="javascript:;">?? #:m#</a>&nbsp;
+    # }); #
+    </script>
+    <script id="company-profile-images" type="kendo-x-template">
+        # $.each(items, function(n1,m1) { #
+        <div class="large-4 medium-4 small-4 columns">
+            # if(n1<3){ #
+            <a href="#:m1.PictureURL#" class="html5lightbox" data-group="reesink-group" title="#:m1.Title#">
+                <!--<img src="#=m1.PictureThumbnailURL.replace('_t','_w')#?renditionid=7" />-->
+                <img src="#=m1.PictureURL#?renditionid=7" />
+            </a>
+            # } #
+            # $.each(items, function(n2,m2) { #
+            # if(n1==2 && n2>2){ #
+            <a href="#:m2.PictureURL#" class="html5lightbox" data-group="reesink-group" title="#:m1.Title#" style="display:none;"></a>
+            # } #
+            # }); #
+        </div>
+        # }); #
+    </script>

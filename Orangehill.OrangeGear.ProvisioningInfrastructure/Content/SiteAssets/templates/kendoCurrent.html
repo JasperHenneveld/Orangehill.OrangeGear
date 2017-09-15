@@ -1,0 +1,265 @@
+    <script id="modal-reveal-template1" type="text/kendo-x-template">
+        <div class="large reveal reesinkbodycontainer" id="currentModal#:item.DocId#" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <div class="extra-container">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <button type="button" class="float-right close" data-close="currentModal#:item.DocId#"><i class="icon-remove"></i></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns #:item.company.businessname#">
+                        <div class="page-header">
+                            <div class="float-right #:item.company.businessname#">
+                                <div class="logo-small"></div>
+                            </div>
+                            <h1 class="title"><a href="#:item.Path#">#:item.Title#</a></h1>
+                            <span class="meta">
+								#	if(item.articlestartmoment!==null){ #
+								#:		item.articlestartmoment.format('D MMMM YYYY') #
+								#	} else if(item.articlestartmoment00!==null){ #
+								#:		item.articlestartmoment00.format('D MMMM YYYY') #
+								#	} else if(item.ArticleStartDateOWSDATE!==null){ #
+								#:		item.ArticleStartDateOWSDATE #
+								#	} # -
+                                # $.each(item.RRAuthor, function(n,author){ #
+                                <a href="#:_spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'')#/userprofile?user=#:author.email#">#:author.name#</a>&nbsp;&nbsp;&nbsp;
+                                # }); #
+                            </span>
+                            # if(item.tags!==null && item.tags!==''){ #
+                            <span class="meta"><i class="icon-tags"></i>#:item.tags#</span>
+                            # } #
+                        </div>
+                        # if (item.PublishingImage!==null){ #
+                        <p>
+                            <img src="#:item.PublishingImage#" title="#:item.Title#" alt="" />
+                        </p>
+                        # } #
+                        # if(item.ArticleByLineOWSTEXT!==null && item.ArticleByLineOWSTEXT!==''){#
+                        <p class="intro">#:item.ArticleByLineOWSTEXT#</p>
+                        # } #
+                        #=item.PublishingPageContentOWSHTML#
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+                # if(item.RRYammerIdOWSTEXT!==undefined && item.RRYammerIdOWSTEXT!==''){ #
+                <div class="row #:item.company.businessname#">
+                    <div class="large-12 columns module-header">
+                        <h1>#:RRResourcesText.comments_heading#</h1>
+                    </div>
+                </div>
+                <div id="RRYammerComments"></div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <textarea id="RRYammerCommentTextArea" class="reply" rows="5" cols="30" placeholder="#:RRResourcesText.comments_description_placeholder#"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns #:item.company.businessname#">
+                        <button id="RRYammerCommentButton" type="button" class="small button" onclick="RRDataModule.postYammerComment(this);" data-RRYammerCommentTextArea="RRYammerCommentTextArea" data-RRYammerThreadId="#:item.RRYammerIdOWSTEXT#">#:RRResourcesText.comments_enter_comment#</button>
+                    </div>
+                </div>
+                # } #
+            </div>
+        </div>
+    </script>
+    <script id="yammer-comments-template" type="text/kendo-x-template">
+        # $.each(comments, function(n,comment) { #
+        <div class="row">
+            <div class="large-12 columns">
+                # if(n%2===0){ #
+                <div class="comment even">
+                # }else{ #
+                <div class="comment odd">
+                # } #
+                    <div class="row">
+                        <div class="large-2 medium-2 small-4 columns ">
+                            <a href="#:comment.sender.web_url#"><img src="#=comment.sender.mugshot_url_template.replace('{width}','106').replace('{height}','106')#" title="" alt="" /></a>
+                        </div>
+                        <div class="large-10 medium-10 small-8 columns">
+                            <span class="meta"><a href="#:comment.web_url#">#:comment.sender.full_name# - #:moment(comment.created).locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#</a></span>
+                            #=comment.body.rich#
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        # }); #
+    </script>
+    <script id="current-pinned-template" type="text/kendo-x-template">
+        # $.each(items, function(n,item) { #
+        <div class="row pinned" id="rowpinned#:item.DocId#">
+            <div class="large-12 columns pinned #:item.company.businessname#" data-equalizer-watch>
+                <div class="box news" data-equalizer-watch>
+					# if (item.PublishingImage===null){ #
+					<div class="box-header empty"></div>
+					# } else { #
+					<div class="box-header">
+						<img src="#:item.PublishingImage#?renditionid=5" title="#:item.Title#" alt="" />
+					</div>
+					# } #
+                    <div class="box-content">
+                        <a href="javascript:;" class="float-right unpin"><i class="icon-pushpin"></i></a>
+                        <h3><a href="javascript:;" onclick="return RRDataModule.revealItemAsync(this);" data-docid="#:item.DocId#" data-open="currentModal#:item.DocId#" data-pinned="true" data-containerid="rowpinned#:item.DocId#" data-spweburl="#:item.SPWebUrl#" data-listid="#:item.ListID#" data-listitemid="#:item.ListItemID#">#:item.Title#</a></h3>
+                    # if(item.ArticleByLineOWSTEXT!==null && item.ArticleByLineOWSTEXT!==''){#
+					<p class="text">#:item.ArticleByLineOWSTEXT#</p>
+					# } #
+                    </div>
+                    <div class="box-footer clearfix">
+                        <ul class="social menu float-left" data-animate="slideInBottom">
+                            <li><a href="javascript:;"><span>0</span> <i class="fi-like"></i></a></li>
+                            <li><a href="javascript:;"><span>0</span> <i class="fi-comments"></i></a></li>
+                        </ul>
+                        <div class="logo-small"></div>
+                    </div>
+                <div class="company-small">#:item.company.name#</div>
+                </div>
+            </div>
+        </div>
+        # }); #
+    </script>
+    <script id="current-template" type="text/kendo-x-template">
+       #if(item.ContentTypeId.startsWith('0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D00')){#
+        <div class="small-12 medium-6 large-6 columns item #:item.company.businessname#" id="currentItem#:item.DocId#">
+            <div class="box news" data-equalizer-watch>
+                # if (item.PublishingImage===null){ #
+                <div class="box-header empty"></div>
+                # } else { #
+                <div class="box-header">
+                    <img src="#:item.PublishingImage#?renditionid=6" title="#:item.Title#" alt="" />
+                </div>
+                # } #
+				<div class="box-content">
+                    <h3><a href="javascript:;" onclick="return RRDataModule.revealItemAsync(this);" data-docid="#:item.DocId#" data-open="currentModal#:item.DocId#" data-spweburl="#:item.SPWebUrl#" data-listid="#:item.ListID#" data-listitemid="#:item.ListItemID#">#:item.Title#</a></h3>
+                    # if(item.ArticleByLineOWSTEXT!==null && item.ArticleByLineOWSTEXT!==''){#
+					<p class="text">#:item.ArticleByLineOWSTEXT#</p>
+					# } #
+                </div>
+                <div class="box-footer clearfix">
+                    # if(item.RRYammerIdOWSTEXT!==undefined && item.RRYammerIdOWSTEXT!==''){ #
+                    <ul class="social menu float-left" data-animate="slideInBottom" id="RRSocial#:item.RRYammerIdOWSTEXT#" data-RRSocial="#:item.RRYammerIdOWSTEXT#">
+                        <li><a href="javascript:;"><span></span> <i class="fi-like"></i></a></li>
+                        <li><a href="javascript:;"><span></span> <i class="fi-comments"></i></a></li>
+                    </ul>
+                    # } #
+                    <div class="logo-small"></div>
+                </div>
+                <div class="company-small">#:item.company.name#</div>
+            </div>
+        </div>
+        #}else if(item.ContentTypeId.startsWith('0x010200EF2853993ED0FD4AAD4C1A8E3C4A548D')){#
+        <div class="small-12 medium-6 large-6 columns item #:item.company.businessname#" id="currentItem#:item.DocId#">
+            <div class="box news" data-equalizer-watch>
+                # if (item.PublishingImage===null){ #
+                <div class="box-header empty"></div>
+                # } else { #
+                <div class="box-header">
+                    <img src="#:item.PublishingImage#" title="#:item.Title#" alt="" />
+                </div>
+                # } #
+                <div class="box-content">
+                    # if(item.fAllDayEvent==='true'){ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                    <br />
+                        # if(item.startdate.getDate()!==item.enddate.getDate()){ #
+						#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                        # } #
+                    <br />
+                    #:RRResourcesText.companyprofile_alldayevent#
+                    # }else{ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    <br />
+                    #:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    # } #
+                </div>
+                <div class="large-12 columns">
+                    <div class="event-name">
+                        <h3>
+                            <a href="#=_spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + '/eventdetails?eventWorkId='##:item.DocId#">#:item.Title#</a>
+                        </h3>
+                        # if(item.Location!==null){ #
+                        #:item.Location#
+                        # } #
+                    </div>
+                </div>
+                <div class="company-small">#:item.company.name#</div>
+            </div>
+        </div>
+        #}else{#
+        <div>#:item.Title#</div>
+        #}#
+    </script>
+    <script id="yammer-template" type="text/kendo-x-template">
+        <div class="row no-bmargin">
+            <div class="large-12 columns">
+                <span class="h3">#=message#</span>
+            </div>
+        </div>
+        # $.each(items, function(n,m) { #
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+                <div class="box news CONNECT" data-equalizer-watch>
+                    <div class="box-header empty">
+                        <img src="#:m.sender.mugshot_url#" />
+                    </div>
+                    <div class="box-content">
+                        <a href="#:m.web_url#" target="_blank">
+                            <span class="meta">#:m.sender.full_name#, #:m.created.format("yyyy-MM-dd HH:mm")#</span>
+                        </a>
+                        <p class="text">#=m.body.rich#</p>
+                    </div>
+                    <div class="box-footer clearfix">
+                        <ul class="social menu float-left" data-animate="slideInBottom">
+                        <li><a href="javascript:;"><span>#:m.liked_by.count#</span> <i class="fi-like"></i></a></li>
+                        <li><a href="javascript:;"><span>#:m.comments.stats.updates-1#</span> <i class="fi-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        # }); #
+    </script>
+    <script id="filterpanel-template" type="text/kendo-x-template">
+        <div class="large-4 medium-4 columns">
+            # for(i=0;i<items.length;i+=3){ #
+            <input type="checkbox" name="RRfilter#:items[i].businessname#" value="#:items[i].guid#" id="RRfilter#:items[i].businessname#" #:items[i].ischecked?"checked":""# data-name="#:items[i].name#"><label for="RRfilter#:items[i].businessname#">#:items[i].name#</label><br />
+            # } #
+        </div>
+        <div class="large-4 medium-4 columns">
+            # for(i=1;i<items.length;i+=3){ #
+            <input type="checkbox" name="RRfilter#:items[i].businessname#" value="#:items[i].guid#" id="RRfilter#:items[i].businessname#" #:items[i].ischecked?"checked":""# data-name="#:items[i].name#"><label for="RRfilter#:items[i].businessname#">#:items[i].name#</label><br />
+            # } #
+        </div>
+        <div class="large-4 medium-4 columns">
+            # for(i=2;i<items.length;i+=3){ #
+            <input type="checkbox" name="RRfilter#:items[i].businessname#" value="#:items[i].guid#" id="RRfilter#:items[i].businessname#" #:items[i].ischecked?"checked":""# data-name="#:items[i].name#"><label for="RRfilter#:items[i].businessname#">#:items[i].name#</label><br />
+            # } #
+        </div>
+    </script>
+    <script id="vacancy-template" type="text/kendo-x-template">
+        # $.each(items, function(n,m) { #
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+                <div class="box news VACAT #:m.company.businessname#" data-equalizer-watch>
+                    <div class="box-content">
+                        <a href="#=(m.externalurl && m.externalurl.Url) || m.Path#" target="_blank">
+                            <h4>#:m.Title#</h4>
+                        </a>
+                        <p class="descr">
+                            #:m.company.name#<br />#:m.HomeAddressCityOWSTEXT#<br />#:m.RRVacancyContractTypeOWSTEXT#
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        # }); #
+        <div class="row">
+            <div class="large-12 columns">
+                <button type="button" class="expanded medium button gray" onclick="window.open('https://royalreesink.hrmatches.com/');">
+                    <!--
+                    <a href="#:_spPageContextInfo.siteServerRelativeUrl.replace(/\/$/,'') + '/work'#">#:RRResourcesText.current_vacancies_more#</a>
+                    -->
+                    <a>#:RRResourcesText.current_vacancies_more#</a>
+                </button>
+            </div>
+        </div>
+    </script>

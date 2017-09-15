@@ -1,0 +1,52 @@
+<script id="mycompany-category" type="text/kendo-x-template">
+    # item.description = item.term.get_description(); #
+	<div class="large-3 medium-3 small-12 columns item" data-rrorder="#:item.order#">
+		<h3>
+			# if(item.children.length>0){ #
+			<a href="#:_spPageContextInfo.webAbsoluteUrl#/MyCompanySub?cat=#:item.name#&catguid=#:item.guid#" title="... meer categorien">#:item.name#</a>
+			# }else{ #
+			#:item.name#
+			# } #
+		</h3>
+		# if(item.description!==''){ #
+        <p class="intro">
+			# if(item.children.length>0){ #
+			<a href="#:_spPageContextInfo.webAbsoluteUrl#/MyCompanySub?cat=#:item.name#&catguid=#:item.guid#" title="... meer categorien">#:item.description#</a>
+			# }else{ #
+            #:item.description#
+			# } #
+        </p>
+        # } #
+		# if(item.result.length>0){ #
+		<ul class="links">
+			# $.each(item.result, function(n,m) { #
+			<li>
+                # if(m.ContentType === 'External Article'){ #
+				<a href="#:m.externalurl.Url#" target="_blank">#:m.Title#</a>
+                # }else{ #
+				<a href="#:m.Path#">#:m.Title#</a>
+                # } #
+			</li>
+			# }); #
+		</ul>
+		# }else if(item.children.length>0){ #
+		
+		<ul class="links">
+			# $.each(item.children, function(n,subitem) { #
+			<li>
+				<a href="#:_spPageContextInfo.webAbsoluteUrl#/MyCompanySub?cat=#:subitem.name#&catguid=#:subitem.guid#">#:subitem.name#</a>
+			</li>
+			# }); #
+		</ul>
+		# }else{ #
+		<p><em>--</em></p>
+		# } #
+	</div>
+</script>
+<script id="mycompany-category-header" type="text/kendo-x-template">
+    <h2>
+        <span id="RR-category-title">#:item.title#</span>
+    </h2>
+    <p class="intro">#:item.description#</p>
+    <hr/>
+</script>

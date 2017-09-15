@@ -1,0 +1,38 @@
+    <script id="company-profile-events" type="text/kendo-x-template">
+    # $.each(items, function(n,item) { #
+        <div class="row event">
+            <div class="large-12 columns">
+                <div class='box-header'>
+                    <div class='square-content'>
+                        <div>
+                            <span>#:item.startdate.format('dd')#</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-content">
+                    # if(item.fAllDayEvent==='true'){ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                    <br />
+                        # if(item.startdate.getDate()!==item.enddate.getDate()){ #
+						#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+                        # } #
+                    <br />
+                    #:RRResourcesText.companyprofile_alldayevent#
+                    # }else{ #
+                    #:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    <br />
+                    #:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+                    # } #
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="event-name">
+                    <h3><a href="#='event.aspx?eventWorkId='+m.DocId#">#:item.Title#</a></h3>
+                    # if(item.Location!==null){ #
+                    #:item.Location#
+                    # } #
+                </div>
+            </div>
+        </div>
+    # }); #
+    </script>

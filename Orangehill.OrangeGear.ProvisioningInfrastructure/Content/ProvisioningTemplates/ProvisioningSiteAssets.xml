@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:Preferences  Generator="OfficeDevPnP.Core, Version=2.8.1610.0, Culture=neutral, PublicKeyToken=3751622786b357c2" >
+  </pnp:Preferences>
+  <pnp:Templates ID="CONTAINER-Reesink-Company-A">
+    <pnp:ProvisioningTemplate ID="TeamSite" Version="1">
+      <pnp:Files>
+        <pnp:File Src="SiteAssets\js\jquery-3.1.1.min.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRApp.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\SP-Responsive-UI.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\Loader.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\Orangehill.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\Orangehill_GlobalNavigation.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\FileSaver.min.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\js.cookie.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\kendo.all.min.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\kendo.custom.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\moment-with-locales.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\moment.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.da-DK.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.de-DE.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.en-us.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.fr-FR.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.nl-nl.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.ru-RU.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\js\RRResources.tr-TR.js" Folder="SiteAssets/js" Overwrite="true" Level="Published" />
+
+        <pnp:File Src="SiteAssets\css\Orangehill.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\kendo.common.min.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\kendo.custom.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\RRApp.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\RRSearch.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\SP-Responsive-UI.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\css\SP-Responsive-UI-Custom.css" Folder="SiteAssets/css" Overwrite="true" Level="Published" />
+
+        <pnp:File Src="SiteAssets\templates\generateresource.aspx" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoAllCompanies.html"  Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoCompanyArticlePage.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoCompanyProfilePage.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoCurrent.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoEventDetail.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoEventOverview.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoMyCompany.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoUserProfile.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\kendoVacancy.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\mainheader.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\mycompanyheader.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+        <pnp:File Src="SiteAssets\templates\scriptincludes.html" Folder="SiteAssets/templates" Overwrite="true" Level="Published" />
+      </pnp:Files>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

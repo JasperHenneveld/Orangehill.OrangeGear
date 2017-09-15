@@ -1,0 +1,198 @@
+﻿.RRWebPartPage .ms-srch-item,
+.RRWebPartPage .ms-srch-people-outerContainer {
+    clear: both;
+    margin: 10px 0 10px -10px;
+    overflow: hidden;
+    padding: 5px 20px 15px 10px;
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.RRWebPartPage .ms-srch-upscope-top {
+	width: 100%!important;
+}
+
+
+.RRWebPartPage .ms-srch-item-path {
+    color: #8a8a8a;
+    display: inline;
+    width: 100%;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+}
+
+.RRWebPartPage .ms-srch-ellipsis {
+    white-space: normal!important;
+}
+
+.RRWebPartPage .ms-srch-item:hover, 
+.RRWebPartPage .ms-srch-resultHover:hover, 
+.RRWebPartPage .edisc-SearchResultItemContainer:hover,
+.RRWebPartPage .ms-core-menu-item:hover, 
+.RRWebPartPage .ms-core-menu-itemSelected {
+    background-color: transparent;
+}
+
+.RRWebPartPage .ms-ref-name {
+    color: #b9373d!important;
+}
+
+.RRWebPartPage .ms-ref-name:hover,
+.RRWebPartPage .ms-ref-refiner #Value > a:hover, 
+.RRWebPartPage .ms-ref-unsel-toggle:hover {
+    color: #e54564!important;
+}
+
+.RRWebPartPage .ms-ref-refiner #Value a:before {
+    font-family: FontAwesome;    
+    content: "\f105";
+    margin-right: 10px;
+    color: #999999;  
+}
+
+.RRWebPartPage .ms-ref-refiner #Value, 
+.RRWebPartPage .ms-ref-unsel-toggle, 
+.RRWebPartPage #OtherValue, #SubmitValue {
+    width: 100%;
+}
+
+.RRWebPartPage .reesinkbodycontainer h3.ms-srch-ellipsis {
+    margin-bottom: 0 /* 0.5rem */;
+}
+
+.RRWebPartPage .sp-peoplepicker-topLevel {   
+    width: 100%!important;
+}  
+
+.RRWebPartPage .ms-ref-refiner #Value .sp-peoplepicker-autoFillContainer {
+    max-width: 100%;
+    min-width: 100%;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+
+.RRWebPartPage .sp-peoplepicker-autoFillContainer .ms-core-menu-label {
+    display: inline;
+}
+
+.RRWebPartPage .reesinkbodycontainer .filters .sp-peoplepicker-topLevel, 
+.RRWebPartPage .reesinkbodycontainer .filters .sp-peoplepicker-topLevelDisabled, 
+.RRWebPartPage .reesinkbodycontainer .filters .sp-peoplepicker-autoFillContainer {
+	border: 0;
+}
+
+.RRWebPartPage .reesinkbodycontainer .filters input.sp-peoplepicker-editorInput[type="text"] {
+    margin-left: 0;
+    padding: 3px 10px;
+}
+
+/* Modified date */
+.RRWebPartPage .histogram_bar_active {
+    border-top: 2px solid #b9373d;
+}
+.RRWebPartPage .ajax__multi_slider_default .inner_rail_horizontal {
+    background-color: #b9373d;
+    border-bottom: 1px solid #b9373d;
+    border-top: 1px solid #b9373d;
+}
+.RRWebPartPage .slider_tick_active {
+    background-color: #b9373d;
+    border: 1px solid #b9373d;
+}
+.RRWebPartPage .ms-ref-ctrl .ms-ref-selSec .ms-ref-filterSel, 
+.RRWebPartPage .ms-ref-ctrl .ms-ref-allSec .ms-ref-filterSel {
+    color: #b9373d;
+}
+
+/* Search Box */
+.RRWebPartPage .results #SearchBox {
+	position: relative;
+}
+.RRWebPartPage .results .ms-srch-sbLarge > input {
+    font-size: 14px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    margin-left: 0;
+    border: none;
+    padding: 2px 40px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+    margin: 0 1px;
+    width: 298px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #E6E6E6;
+    height: 35px;
+}
+.RRWebPartPage .results .ms-srch-sbLarge > input:focus {
+ border: 1px solid #cacaca;
+}
+.RRWebPartPage .results .ms-srch-sbLarge {
+	width: 300px;
+	border: none;
+}
+.RRWebPartPage .results .ms-srch-sbLarge:before,
+.RRWebPartPage .results .ms-srch-sbLarge:focus:before {    
+    font-family: FontAwesome;
+    color: #999999;
+    content: "\f002";
+    font-size: 20px;
+    margin-left:10px;
+    line-height: 35px;
+}
+.RRWebPartPage .results .ms-srch-sbLarge > .ms-srch-sb-searchLink:before {
+    font-family: FontAwesome;
+    content: "\f061";
+    font-size: 18px;
+    color: #999999;
+    margin-left: 10px;
+    -webkit-transition: color 0.3s ease-out;
+    -moz-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+
+}
+.RRWebPartPage .results .ms-srch-sbLarge > .ms-srch-sb-searchLink {
+    height: 33px;
+    margin-right: 2px;
+    margin-top: 2px;
+    width: 35px;
+}
+.RRWebPartPage .results .ms-srch-sbLarge > .ms-srch-sb-searchLink:hover:before {    
+    color: #333333;
+}
+
+.RRWebPartPage .results .ms-srch-sbLarge > .ms-srch-sb-searchLink img {
+	display: none;
+}
+.RRWebPartPage .results .ms-srch-sbLarge > .ms-srch-sb-searchLink {
+	background-color: #f7f7f7;
+	float: right;
+}
+.RRWebPartPage .ms-srch-result #Paging a,
+.RRWebPartPage .ms-srch-result #Paging a:hover {
+    color: #b9373d;
+}
+/* Filters */
+.RRWebPartPage .filters [type="checkbox"] + label, .RRWebPartPage .filters [type="radio"] + label {
+    vertical-align: middle;
+}
+.RRWebPartPage .filters [type="file"], .RRWebPartPage .filters [type="checkbox"], [type="radio"] {
+    margin: 0;
+}
+/* People Search */
+.RRWebPartPage .ms-srch-people-outerContainer,
+.RRWebPartPage .ms-srch-people-item  {
+    width: 100%;
+}
+.RRWebPartPage .ms-srch-people-item #UserInfoContainer {
+    float: left;
+    margin-left: 20px;
+    width: auto
+}
+
+
+@media screen and (max-width: 39.9375em) {
+    .RRWebPartPage .ms-srch-hover-outerContainer {
+        display: none !important;
+    }
+}

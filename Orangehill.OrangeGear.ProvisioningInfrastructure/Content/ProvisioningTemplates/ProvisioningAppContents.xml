@@ -1,0 +1,59 @@
+﻿<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.1.1602.0, Culture=neutral, PublicKeyToken=null" />
+  <pnp:Templates ID="CONTAINER-PNP-PARTNER-PACK-INFRASTRUCTURE-CONTENTS">
+    <pnp:ProvisioningTemplate ID="PNP-PARTNER-PACK-INFRASTRUCTURE-CONTENTS" Version="1">
+      <pnp:Files>
+        <pnp:File Src="ProvisioningTemplates\Templates\PnP-Empty-Site.xml" Folder="/PnPProvisioningTemplates" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Site" />
+            <pnp:Property Key="PnPProvisioningTemplateDescription" Value="Site Template info" />
+          </pnp:Properties>
+        </pnp:File>
+        <pnp:File Src="ProvisioningTemplates\Templates\PnP-Empty-Sub-Site.xml" Folder="/PnPProvisioningTemplates" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Web" />
+            <pnp:Property Key="PnPProvisioningTemplateDescription" Value="Web Template info" />
+          </pnp:Properties>
+        </pnp:File>
+        <!--<pnp:File Src="CustomBar\SPO-CustomBar.js" Folder="/PnPProvisioningTemplates/CustomBar" Overwrite="true" />
+        <pnp:File Src="CustomBar\SPO-CustomBar.xml" Folder="/PnPProvisioningTemplates/CustomBar" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Partial" />
+          </pnp:Properties>
+        </pnp:File>
+        <pnp:File Src="Infrastructure\Palette012.spcolor" Folder="/PnPProvisioningTemplates/Infrastructure" Overwrite="true" />
+        <pnp:File Src="Infrastructure\PnP-Partner-Pack-Infrastructure-Jobs.xml" Folder="/PnPProvisioningTemplates/Infrastructure" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Partial" />
+          </pnp:Properties>
+        </pnp:File>
+        <pnp:File Src="Infrastructure\PnP-Partner-Pack-Infrastructure-Templates.xml" Folder="/PnPProvisioningTemplates/Infrastructure" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Partial" />
+          </pnp:Properties>
+        </pnp:File>
+        <pnp:File Src="Infrastructure\PnP.png" Folder="/PnPProvisioningTemplates/Infrastructure" Overwrite="true" />
+        <pnp:File Src="Overrides\PnP-Partner-Pack-Overrides.js" Folder="/PnPProvisioningTemplates/Overrides" Overwrite="true" />
+        <pnp:File Src="Overrides\PnP-Partner-Pack-Overrides.xml" Folder="/PnPProvisioningTemplates/Overrides" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Partial" />
+          </pnp:Properties>
+        </pnp:File>
+        <pnp:File Src="Responsive\SPO-Responsive.css" Folder="/PnPProvisioningTemplates/Responsive" Overwrite="true" />
+        <pnp:File Src="Responsive\SPO-Responsive.js" Folder="/PnPProvisioningTemplates/Responsive" Overwrite="true" />
+        <pnp:File Src="Responsive\SPO-Responsive.xml" Folder="/PnPProvisioningTemplates/Responsive" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="0x010100498154DED7C84F4AB61A4029018F9048" />
+            <pnp:Property Key="PnPProvisioningTemplateScope" Value="Partial" />
+          </pnp:Properties>
+        </pnp:File>-->
+      </pnp:Files>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

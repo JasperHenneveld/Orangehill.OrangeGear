@@ -1,0 +1,138 @@
+<script id="taggedcontent-template" type="text/kendo-x-template">
+    # if((items.length + $('.RRSummaryLinks li a').length)>0) {#
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_view_also#</h1>
+    </div>
+    <div class="row b-margin">
+        <div class="large-12 columns">
+            <ul class="links">
+                # $('.RRSummaryLinks li a').each(function(n,item){ #
+                <li>
+                    <a href="#:item.href#">#:item.innerText#</a>
+                </li>
+                # }); #
+                # $.each(items, function(n,item){#
+                <li>
+                    # if(item.ContentType === 'External Article'){ #
+                    <a href="#:item.externalurl.Url#" target="_blank">#:item.Title#</a>
+                    # }else{ #
+                    <a href="#:item.Path#">#:item.Title#</a>
+                    # } #
+                </li>
+                # }); #
+            </ul>
+        </div>
+    </div>
+    # } else if(typeof(RRPageInEditMode)!=="undefined" && RRPageInEditMode){ #
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_view_also#</h1>
+    </div>
+    <div class="row b-margin">
+        <div class="large-12 columns">
+            &lt;&lt; tagged articles will appear here &gt;&gt;
+        </div>
+    </div>
+    # } #
+</script>
+<script id="taggeddocuments-template" type="text/kendo-x-template">
+    # if(items.length>0){ #
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_documents#</h1>
+    </div>
+    <div class="row b-margin">
+        <div class="large-12 columns">
+            <ul class="links">
+                # $.each(items, function(n,item) {#
+                <li>
+                    <a href="#:item.Path#">#:item.Title#</a>
+                </li>
+                # }); #
+            </ul>
+        </div>
+    </div>
+    # } else if(typeof(RRPageInEditMode)!=="undefined" && RRPageInEditMode){ #
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_documents#</h1>
+    </div>
+    <div class="row b-margin">
+        <div class="large-12 columns">
+            &lt;&lt; tagged documents will appear here &gt;&gt;
+        </div>
+    </div>
+    # } #
+</script>
+<script id="taggedevents-template" type="text/kendo-x-template">
+    # if(items.length>0){ #
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_events#</h1>
+    </div>
+    <div class="row event">
+        # $.each(items, function(n,item) { #
+        <div class="large-12 columns">
+            <div class='box-header'>
+                <div class='square-content'>
+                    <div>
+                        <span>#:item.startdate.format('dd ')#</span>
+                    </div>
+                </div>
+            </div>
+			<div class="box-content">
+				# if(item.fAllDayEvent==='true'){ #
+				#:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+				<br />
+					# if(item.startdate.getDate()!==item.enddate.getDate()){ #
+					#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY')#
+					# } #
+				<br />
+				#:RRResourcesText.companyprofile_alldayevent#
+				# }else{ #
+				#:item.startmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+				<br />
+				#:item.endmoment.locale(_spPageContextInfo.currentUICultureName).format('D MMMM YYYY, HH:mm')#
+				# } #
+			</div>
+        </div>
+        <div class="large-12 columns">
+            <div class="event-name">
+                <h3><a href="#=_spPageContextInfo.siteAbsoluteUrl+'/eventdetails?eventWorkId='+item.DocId#">#:item.Title#</a></h3>
+                # if(item.Location!==null){ #
+                #:item.Location#
+                # } #
+            </div>
+        </div>
+        # }); #
+    </div>
+    # } else if(typeof(RRPageInEditMode)!=="undefined" && RRPageInEditMode){ #
+    <div class="module-header">
+        <h1>#:RRResourcesText.companyarticle_events#</h1>
+    </div>
+    <div class="row b-margin">
+        <div class="large-12 columns">
+            &lt;&lt; tagged events will appear here &gt;&gt;
+        </div>
+    </div>
+    # } #
+</script>
+
+
+    <script id="company-tags" type="text/kendo-x-template">
+    # $.each(items, function(n,m) { #
+        <a href="javascript:;">?? #:m#</a>&nbsp;
+    # }); #
+    </script>
+    <script id="company-profile-images" type="kendo-x-template">
+        # $.each(items, function(n1,m1) { #
+        <div class="large-4 medium-4 small-4 columns">
+            # if(n1<3){ #
+            <a href="#:m1.PictureURL#" class="html5lightbox" data-group="reesink-group" title="#:m1.Title#">
+                <img src="#=m1.PictureThumbnailURL.replace('_t','_w')#" />
+            </a>
+            # } #
+            # $.each(items, function(n2,m2) { #
+            # if(n1==2 && n2>2){ #
+            <a href="#:m2.PictureURL#" class="html5lightbox" data-group="reesink-group" title="#:m1.Title#" style="display:none;"></a>
+            # } #
+            # }); #
+        </div>
+        # }); #
+    </script>
